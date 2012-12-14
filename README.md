@@ -41,7 +41,7 @@ Parsley::SYSLOG_KEYS
 #=> [:priority, :syslog_version, :emitted_at, :hostname, :appname, :proc_id, :msg_id, :structured_data, :message]
 ```
 
-To parse of messages is invoked with the `events` method.
+To parse a message packet, invoke the `events` method.
 
 ```ruby
 msg_str = "156 <40>1 2012-11-30T06:45:26+00:00 heroku web.3 d.73ea7440-270a-435a-a0ea-adf50b4e5f5a - Starting process with command `bundle exec rackup config.ru -p 24405`"
@@ -50,6 +50,10 @@ log_parser.events(msg_str) do |event|
   #=> {:priority=>40, :syslog_version=>1, :emitted_at=>2012-11-30 06:45:26 UTC, :hostname=>"heroku", :appname=>nil, :proc_id=>"web.3", :msg_id=>"d.73ea7440-270a-435a-a0ea-adf50b4e5f5a", :structured_data=>nil, :message=>"Starting process with command `bundle exec rackup config.ru -p 24405`"}
 end
 ```
+
+## Contributions
+
+* [Ryan Smith](https://github.com/ryandotsmith/) for his work on [l2met](https://github.com/ryandotsmith/l2met) which forms the foundation of Parsley.
 
 ## Todos
 
