@@ -1,4 +1,4 @@
-parsley
+heroku-log-parser
 =======
 
 A multi-provider [syslog (rfc5424)](http://tools.ietf.org/html/rfc5424#section-6) parser written in Ruby and specifically
@@ -6,10 +6,10 @@ targeting Heroku's log drain format.
 
 ## Install
 
-Declare `parsley` in your `Gemfile`.
+Declare `heroku-log-parser` in your `Gemfile`.
 
 ```ruby
-gem 'parsley', :git => 'git@github.com:rwdaigle/parsley.git'
+gem 'heroku-log-parser', :git => 'git@github.com:rwdaigle/heroku-log-parser.git'
 ```
 
 Run bundler.
@@ -20,7 +20,7 @@ $ bundle install
 
 ## Usage
 
-Parsley is built on the concept of syslog message flavors. In my brief experience with syslog streams,
+heroku-log-parser is built on the concept of syslog message flavors. In my brief experience with syslog streams,
 everybody seems to do it differently. So it is necessary to handle these inconsistencies on a per-provider
 basis.
 
@@ -29,15 +29,15 @@ Currently the only flavor available is the flavor for Heroku's log-stream.
 Create a parser based on your desired flavor:
 
 ```ruby
-log_parser = Parsley.parser(:heroku).new
+log_parser = heroku-log-parser.parser(:heroku).new
 ```
 
 A parser is a stateless, regex-based object that accepts a string of data holding one or more syslog messages
 and emits a hash containing the individual parts of a syslog message. For those unwilling to read the spec, the
-list of syslog tokens is as follows (and is stored in the `Parsley::SYSLOG_KEYS` array):
+list of syslog tokens is as follows (and is stored in the `heroku-log-parser::SYSLOG_KEYS` array):
 
 ```ruby
-Parsley::SYSLOG_KEYS
+heroku-log-parser::SYSLOG_KEYS
 #=> [:priority, :syslog_version, :emitted_at, :hostname, :appname, :proc_id, :msg_id, :structured_data, :message]
 ```
 
@@ -53,7 +53,7 @@ end
 
 ## Contributions
 
-* [Ryan Smith](https://github.com/ryandotsmith/) for his work on [l2met](https://github.com/ryandotsmith/l2met) which forms the foundation of Parsley.
+* [Ryan Smith](https://github.com/ryandotsmith/) for his work on [l2met](https://github.com/ryandotsmith/l2met) which forms the foundation of heroku-log-parser.
 
 ## Todos
 
