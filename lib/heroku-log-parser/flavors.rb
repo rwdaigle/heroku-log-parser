@@ -1,1 +1,0 @@
-require "parsley/flavors/heroku"

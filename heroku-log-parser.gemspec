@@ -3,7 +3,7 @@ require 'heroku-log-parser/version'
 
 Gem::Specification.new do |s|
   s.name              = "heroku-log-parser"
-  s.version           = heroku-log-parser::VERSION
+  s.version           = HerokuLogParser::VERSION
   s.platform          = Gem::Platform::RUBY
   s.author            = "Ryan Daigle"
   s.email             = ["ryan.daigle@gmail.com"]
