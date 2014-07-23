@@ -1,3 +1,5 @@
+require 'time'
+
 class HerokuLogParser
 
   SYSLOG_KEYS = :priority, :syslog_version, :emitted_at, :hostname, :appname, :proc_id, :msg_id, :structured_data, :message
