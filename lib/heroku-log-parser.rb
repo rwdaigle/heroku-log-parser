@@ -45,7 +45,7 @@ class HerokuLogParser
         elsif matching = d.match(/\n/) # Newlines = explicit message delimiter
           d = matching.post_match
         else
-          STDERR.puts("Unable to parse: #{d}")
+          STDERR.puts("Unable to parse: #{d}. Full line was: #{data_str.inspect}")
           return
         end
       end
