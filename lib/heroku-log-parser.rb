@@ -39,7 +39,7 @@ class HerokuLogParser
           num_bytes = matching[1].to_i
           frame_offset = matching[0].length - 1 # The space char is part of the count
           line_end = frame_offset + num_bytes
-          msg = d[frame_offset..line_end]
+          msg = d[frame_offset..(line_end-1)]
           yield msg
           d = d[line_end..d.length]
         elsif matching = d.match(/\n/) # Newlines = explicit message delimiter

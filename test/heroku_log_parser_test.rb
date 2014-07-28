@@ -33,7 +33,7 @@ describe HerokuLogParser do
       proc_id: "web.2",
       msg_id: nil,
       structured_data: nil,
-      message: "- Started GET \"/2013/02/26/full-text-search-in-your-browser\" for 197.112.207.103 at 2014-07-17 12:59:25 +00001"
+      message: "- Started GET \"/2013/02/26/full-text-search-in-your-browser\" for 197.112.207.103 at 2014-07-17 12:59:25 +0000",
     }, {
       priority: 190,
       syslog_version: 1,
