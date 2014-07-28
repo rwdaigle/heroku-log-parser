@@ -63,6 +63,7 @@ class HerokuLogParser
       event[:msg_id] = interpret_nil(nil)
       event[:structured_data] = interpret_nil(matching[7])
       event[:message] = interpret_nil(matching[8])
+      event[:original] = matching[0]
       event
     end
 
