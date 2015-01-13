@@ -9,9 +9,9 @@ class HerokuLogParser
     def parse(data_str)
       events = []
       lines(data_str) do |line|
-        if(matching = line.match(line_regex))
-          events << event_data(matching)
-        end
+        matching = line.match(LINE_REGEXP)
+        next unless matching
+        events << event_data(matching)
       end
       events
     end
@@ -21,9 +21,7 @@ class HerokuLogParser
     # http://tools.ietf.org/html/rfc5424#page-8
     # frame <prority>version time hostname <appname-missing> procid msgid [no structured data = '-'] msg
     # 120 <40>1 2013-07-26T18:39:37.489572+00:00 host app web.11 - State changed from starting to up...
-    def line_regex
-      @line_regex ||= /\<(\d+)\>(1) (\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\d\d\d\d\+00:00) ([a-z0-9\-\_\.]+) ([a-z0-9-]+) ([a-z0-9\-\_\.]+) (\-) (.*)$/
-    end
+    LINE_REGEXP = /\<(\d+)\>(1) (\S+) (\S+) (\S+) (\S+) (-) (.*)$/
 
     # Heroku's http log drains (https://devcenter.heroku.com/articles/labs-https-drains)
     # utilize octet counting framing (http://tools.ietf.org/html/draft-gerhards-syslog-plain-tcp-12#section-3.4.1)
