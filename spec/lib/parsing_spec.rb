@@ -33,8 +33,8 @@ describe HerokuLogParser do
     expect(msg_data['dyno']).to eq 'web.8'
     expect(msg_data['connect']).to eq '3ms'
     expect(msg_data['service']).to eq '30000ms'
-    expect(msg_data['status']).to eq '503'
-    expect(msg_data['bytes']).to eq '0'
+    expect(msg_data['status']).to eq 503
+    expect(msg_data['bytes']).to eq 0
   end
 
   it 'parses a postgres info message' do
@@ -71,18 +71,18 @@ describe HerokuLogParser do
     msg_data = log[:message_data]
     expect(msg_data).not_to be_empty
     expect(msg_data['source']).to eq 'HEROKU_POSTGRESQL_BLUE'
-    expect(msg_data['sample#current_transaction']).to eq '63725583'
+    expect(msg_data['sample#current_transaction']).to eq 63725583
     expect(msg_data['sample#db_size']).to eq '8965671096bytes'
-    expect(msg_data['sample#tables']).to eq '37'
-    expect(msg_data['sample#active-connections']).to eq '73'
-    expect(msg_data['sample#waiting-connections']).to eq '0'
-    expect(msg_data['sample#index-cache-hit-rate']).to eq '0.99816'
-    expect(msg_data['sample#table-cache-hit-rate']).to eq '0.99676'
-    expect(msg_data['sample#load-avg-1m']).to eq '0.255'
-    expect(msg_data['sample#load-avg-5m']).to eq '0.565'
-    expect(msg_data['sample#load-avg-15m']).to eq '0.795'
-    expect(msg_data['sample#read-iops']).to eq '51.158'
-    expect(msg_data['sample#write-iops']).to eq '18.729'
+    expect(msg_data['sample#tables']).to eq 37
+    expect(msg_data['sample#active-connections']).to eq 73
+    expect(msg_data['sample#waiting-connections']).to eq 0
+    expect(msg_data['sample#index-cache-hit-rate']).to eq 0.99816
+    expect(msg_data['sample#table-cache-hit-rate']).to eq 0.99676
+    expect(msg_data['sample#load-avg-1m']).to eq 0.255
+    expect(msg_data['sample#load-avg-5m']).to eq 0.565
+    expect(msg_data['sample#load-avg-15m']).to eq 0.795
+    expect(msg_data['sample#read-iops']).to eq 51.158
+    expect(msg_data['sample#write-iops']).to eq 18.729
     expect(msg_data['sample#memory-total']).to eq '15405616kB'
     expect(msg_data['sample#memory-free']).to eq '205172kB'
     expect(msg_data['sample#memory-cached']).to eq '12821088kB'

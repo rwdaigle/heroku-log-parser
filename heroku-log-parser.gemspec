@@ -20,5 +20,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.8.7"
 
+  s.add_runtime_dependency 'logfmt'
+
   s.add_development_dependency 'rspec'
 end

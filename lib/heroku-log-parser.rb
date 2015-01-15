@@ -1,5 +1,5 @@
 require 'time'
-require 'shellwords'
+require 'logfmt'
 
 class HerokuLogParser
 
@@ -69,7 +69,8 @@ class HerokuLogParser
     private
 
     def parse_message_data(msg)
-      Shellwords.shellwords(msg).map { |kv| kv.split('=', 2) if kv.include?('=') }.compact.to_h
+      return {} unless msg.include?('=')
+      Logfmt.parse(msg)
     end
 
     def interpret_nil(val)

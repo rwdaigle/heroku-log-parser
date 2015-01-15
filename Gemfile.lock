@@ -2,10 +2,13 @@ PATH
   remote: .
   specs:
     heroku-log-parser (0.2.2)
+      logfmt
 
 GEM
+  remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    logfmt (0.0.7)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
