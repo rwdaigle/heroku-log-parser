@@ -1,0 +1,1 @@
+require 'heroku-log-parser'

@@ -1,4 +1,5 @@
 require 'time'
+require 'shellwords'
 
 class HerokuLogParser
 
@@ -61,10 +62,15 @@ class HerokuLogParser
       event[:msg_id] = interpret_nil(nil)
       event[:structured_data] = interpret_nil(matching[7])
       event[:message] = interpret_nil(matching[8])
+      event[:message_data] = parse_message_data(matching[8])
       event
     end
 
     private
+
+    def parse_message_data(msg)
+      Shellwords.shellwords(msg).map { |kv| kv.split('=', 2) if kv.include?('=') }.compact.to_h
+    end
 
     def interpret_nil(val)
       nil?(val) ? nil : val
