@@ -61,8 +61,8 @@ $ bundle install
   "dyno"=>"web.8",
   "connect"=>"3ms",
   "service"=>"30000ms",
-  "status"=>"503",
-  "bytes"=>"0"}}]
+  "status"=>503,
+  "bytes"=>0}}]
 ```
 
 `HerokuLogParser` is a stateless, regex-based parser that accepts a string of data holding one or more syslog messages
