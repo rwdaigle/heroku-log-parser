@@ -38,12 +38,8 @@ HerokuLogParser::SYSLOG_KEYS
 
 ## Contributions
 
+* [Pablo Brasero](https://github.com/pablobm) for his work on keeping the parser up to date with Heroku's changing log format.
 * [Ryan Smith](https://github.com/ryandotsmith/) for his work on [l2met](https://github.com/ryandotsmith/l2met) which forms the foundation of heroku-log-parser.
-
-## Todos
-
-* TESTS!!!!
-* 2nd order parsing. For instance, for parsing a structured message body into key=value pairs (including the structured_data message part)
 
 ## Issues
 
