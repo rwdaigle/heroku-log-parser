@@ -1,0 +1,19 @@
+PATH
+  remote: .
+  specs:
+    heroku-log-parser (0.2.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  heroku-log-parser!
+  rake
+
+BUNDLED WITH
+   1.10.6
