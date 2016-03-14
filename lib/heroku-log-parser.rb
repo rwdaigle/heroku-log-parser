@@ -37,7 +37,7 @@ class HerokuLogParser
       while d && d.length > 0
         if matching = d.match(/^(\d+) /) # if have a counting frame, use it
           num_bytes = matching[1].to_i
-          frame_offset = matching[0].length - 1 # The space char is part of the count
+          frame_offset = matching[0].length
           line_end = frame_offset + num_bytes
           msg = d[frame_offset..(line_end-1)]
           yield msg
