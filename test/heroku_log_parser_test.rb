@@ -72,4 +72,9 @@ describe HerokuLogParser do
     assert_equal expected_second, actual[1]
   end
 
+  it "allows variable microsecond precision" do
+    msg = "283 <158>1 2022-01-26T20:25:08.61556+00:00 host heroku router - at=info method=GET path=\"/tags\" host=mine.herokuapp.com request_id=b4dffe63-d7c8-4b65-9938-55b54d7b7efa fwd=\"1.1.1.1,1.1.1.2\" dyno=web.1 connect=0ms service=51ms status=200 bytes=27662 protocol=https\n"
+    actual = HerokuLogParser.parse(msg)
+    refute_empty actual
+  end
 end
