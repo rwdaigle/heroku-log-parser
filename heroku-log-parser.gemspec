@@ -5,9 +5,9 @@ Gem::Specification.new do |s|
   s.name              = "heroku-log-parser"
   s.version           = HerokuLogParser::VERSION
   s.platform          = Gem::Platform::RUBY
-  s.author            = "Ryan Daigle"
+  s.authors            =["Ryan Daigle", "Florian Aßmann"]
   s.email             = ["ryan.daigle@gmail.com"]
-  s.homepage          = "https://github.com/rwdaigle/heroku-log-parser"
+  s.homepage          = "https://github.com/boof/heroku-log-parser"
   s.summary           = "Syslog message parser"
   s.description       = "Easily parse Heroku's syslog-based application log-stream"
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  if File.exists?('UPGRADING')
+  if File.exist?('UPGRADING')
     s.post_install_message = File.read("UPGRADING")
   end
 
